@@ -29,4 +29,4 @@ def stats() -> str:
 def unauthorized() -> str:
     """ GET /api/v1/unauthorized
     """
-    return abort(401)
+    abort(401)
