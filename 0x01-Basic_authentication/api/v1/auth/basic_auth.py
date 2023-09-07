@@ -27,8 +27,6 @@ class BasicAuth(Auth):
         Returns:
             str: _description_
         """
-        if authorization_header is None:
-            return None
 
         if type(authorization_header) == str:
             pattern = r'Basic (?<token>.+)'
