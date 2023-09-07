@@ -29,9 +29,9 @@ class Auth:
 
         for excluded_path in excluded_paths:
             if fnmatch.fnmatch(path, excluded_path):
-                return False
+                return True 
 
-        return True
+        return False 
 
     def authorization_header(self, request=None) -> str:
         """Header data
