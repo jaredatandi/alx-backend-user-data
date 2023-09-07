@@ -29,7 +29,7 @@ class BasicAuth(Auth):
         """
 
         if type(authorization_header) == str:
-            pattern = r'Basic (?<token>.+)'
+            pattern = r'Basic (?P<token>.+)'
             match_pattern = re.fullmatch(pattern, authorization_header.strip())
             if match_pattern is not None:
                 return match_pattern.group('token')
