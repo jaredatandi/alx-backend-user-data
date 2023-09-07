@@ -42,8 +42,8 @@ class Auth:
         Returns:
             str: _description_
         """
-        if request is None or request.header.get('Authorization') is None:
-            return None
+        if request is not None:
+            return request.headers.get('Authorization', None)
 
         return None
 
