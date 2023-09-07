@@ -27,11 +27,14 @@ class Auth:
         if excluded_paths is None or not excluded_paths:
             return True
 
+        path = path.rstrip('/')
+
         for excluded_path in excluded_paths:
+            excluded_path = excluded_path.rstrip('/')
             if fnmatch.fnmatch(path, excluded_path):
                 return False
 
-        return False 
+        return True
 
     def authorization_header(self, request=None) -> str:
         """Header data
