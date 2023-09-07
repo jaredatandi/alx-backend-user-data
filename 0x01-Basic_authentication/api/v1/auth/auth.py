@@ -31,7 +31,7 @@ class Auth:
             if fnmatch.fnmatch(path, excluded_path):
                 return False
 
-        return True 
+        return True
 
     def authorization_header(self, request=None) -> str:
         """Header data
@@ -42,6 +42,9 @@ class Auth:
         Returns:
             str: _description_
         """
+        if request is None or request.header.get('Authorization') is None:
+            return None
+
         return None
 
     def current_user(self, request=None) -> TypeVar('User'):
