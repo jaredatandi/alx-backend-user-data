@@ -55,10 +55,10 @@ class BasicAuth(Auth):
                 return res.decode('utf-8')
             except (binascii.Error, UnicodeDecodeError):
                 return None
-    
+
     def extract_user_credentials(
-        self, decoded_base64_authorization_header: str
-        ) -> (str, str):
+            self, decoded_base64_authorization_header: str
+            ) -> (str, str):
         """user data extraction
 
             str (_type_): _description_
